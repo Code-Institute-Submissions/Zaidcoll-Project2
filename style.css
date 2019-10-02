@@ -1,0 +1,14 @@
+table{
+    display:block;
+    background-color: black;
+}
+#title{
+    color:white;
+    padding-left: 20px;
+}
+.btn{
+    padding-left: 20px;
+}
+#imager1{
+    height:400px;
+}
