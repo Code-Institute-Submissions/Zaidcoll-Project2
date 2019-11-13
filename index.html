@@ -25,12 +25,15 @@
   
 <div class="container">
     	<div class="jumbotron">
-	    	<h3 class="text-center">Movie Searcher</h3>
 	    	<form id="searchform">
 	    		<input type="text" class="form-control" id="searcher" placeholder="Search Movies">
-	    		<button type="button"id='clicker' class="btn btn-primary m-2 ">Search</button>
+	    		<button type="button"id='clicker' class="btn btn-primary m-2 text-center ">Search</button>
 	    	</form>
-	    </div>
+  <div class="btn-group " id = 'button-group'  role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-light" id = 'filter-soon'>Upcoming</button>
+    <button type="button" class="btn btn-light " id = 'filter-popular'>Popular</button>
+    <button type="button" class="btn btn-light " id = 'filter-top' >Top Rated</button>
+  </div>
 </div>
   
 <div class="container">

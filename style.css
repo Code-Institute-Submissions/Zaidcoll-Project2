@@ -28,3 +28,25 @@ table{
     background-color:grey;
     color:white;
 }
+
+#button-group {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btn{
+  margin-bottom: 3px;
+}
+#movieInfoHolder{
+  padding-top: 10px;
+}
+
+.jumbotron{
+    background: url("Images/movieimage.jpg") no-repeat center center; 
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
