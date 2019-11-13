@@ -9,8 +9,19 @@ table{
 .btn{
     padding-left: 20px;
 }
-#imager1{
-    height:400px;
+
+#results img, #movie_info img{
+  width:100%;
+}
+
+@media(min-width:960px){
+  #results .col-md-3 .well{
+    height: 390px;
+  }
+
+  #results .col-md-3 img{
+    height:240px;
+  }
 }
 
 #footer1{

@@ -4,10 +4,12 @@
 const FIND = 'https://api.themoviedb.org/3/movie/'
 const API_KEY = 'f538f37fb7683c00f076bc35ebfcaade'
 const URL = 'https://api.themoviedb.org/3/search/movie?api_key=' +API_KEY
-const IMG = 'https://image.tmdb.org/t/p/w500'
+const IMG_poster = 'https://image.tmdb.org/t/p/w500'
+const IMG = 'https://image.tmdb.org/t/p/w154'
 const SEARCH = 'https://api.themoviedb.org/3/search/multi?api_key=' + API_KEY
 
 $(function() {
+    
 
     $('#clicker').click(function() {
         $('#results').empty()
@@ -23,16 +25,21 @@ $(function() {
             let movies = response.data.results
             let output = '';
             $.each(movies,(index,movie)=>{
-                output+=`
-                <div class = 'col-md-3'>
-                    <div class="well text-center">
-                    <img src = "${IMG + movie.poster_path}">
-                    <h5>${movie.original_title}</h5>
-                    <h3>${movie.id}</h3>
-                    <a onclick="movieSelected('${movie.id}')" class = "btn btn-primary" href='#'>Movie Details</a>
+                if(movie.poster_path){
+                    if(movie.original_title){
+                    output+=`
+                    <div class = 'col-md-3'>
+                        <div class="well text-center">
+                        <img src = "${IMG + movie.poster_path}">
+                        <h5>${movie.original_title}</h5>
+                        <a onclick="movieSelected('${movie.id}')" class = "btn btn-primary" href='#'>Movie Details</a>
+                        </div>
                     </div>
-                </div>
                 `
+                    }
+
+                }
+                
             })
             $('#results').html(output);
             console.log(movies)
@@ -60,9 +67,31 @@ function movieinfo(){
             <div class = "col-md-4>">
                 <img src = "${IMG + movie.poster_path}" class = "thumbnail">
             </div>
+            <div class ='col-md-8'>
+            <h3>${movie.original_title}</h2>
+            <ul class = 'list-group'>
+            
+              <li class="list-group-item"><strong>Genre:</strong> ${movie.genres[0].name}</li>
+              <li class="list-group-item"><strong>Revenue:</strong> $ ${movie.revenue}</li>
+              <li class="list-group-item"><strong>Ratings:</strong> ${movie.vote_average}</li>
+            </ul>
+        </div>
+        <div class="row">
+          <div class="well">
+            <h3>Plot</h3>
+            ${movie.overview}
+            <hr>
+            <a href="http://imdb.com/title/${movie.imdb_id}" target="_blank" class="btn btn-primary">View IMDB</a>
+            <a href="index.html" class="btn btn-default">Go Back To Search</a>
+          </div>
         </div>
         `
-        $('#movie_info').html(output);})
+        $('#movie_info').html(output);
+        
+    })
+    .catch((err) => {
+      console.log(err);
+    });
         
     }
 
