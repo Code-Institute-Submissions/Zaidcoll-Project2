@@ -25,7 +25,6 @@ $(function() {
                     <div class = 'col-md-3'>
                         <div class="well text-center">
                         <img src = "${IMG + movie.poster_path}">
-                        <h5>${movie.id}</h5>
                         <h5>${movie.original_title}</h5>
                         <a onclick="movieSelected('${movie.id}')" class = "btn btn-primary" href='#'>Movie Details</a>
                         </div>
@@ -142,7 +141,6 @@ function movieinfo(){
                     <div class = 'col-md-3'>
                         <div class="well text-center">
                         <img src = "${IMG + movie.poster_path}">
-                        <h5>${movie.id}</h5>
                         <h5>${movie.original_title}</h5>
                         <a onclick="movieSelected('${movie.id}')" class = "btn btn-primary" href='#'>Movie Details</a>
                         </div>
@@ -172,7 +170,6 @@ function movieinfo(){
                     <div class = 'col-md-3'>
                         <div class="well text-center">
                         <img src = "${IMG + movie.poster_path}">
-                        <h5>${movie.id}</h5>
                         <h5>${movie.original_title}</h5>
                         <a onclick="movieSelected('${movie.id}')" class = "btn btn-primary" href='#'>Movie Details</a>
                         </div>
@@ -202,7 +199,6 @@ function movieinfo(){
                     <div class = 'col-md-3'>
                         <div class="well text-center">
                         <img src = "${IMG + movie.poster_path}">
-                        <h5>${movie.id}</h5>
                         <h5>${movie.original_title}</h5>
                         <a onclick="movieSelected('${movie.id}')" class = "btn btn-primary" href='#'>Movie Details</a>
                         </div>
